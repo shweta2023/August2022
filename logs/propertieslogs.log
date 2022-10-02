@@ -8,3 +8,8 @@
 [WARN ] 2022-09-27 22:50:15.592 [main] logTest - This is warn message
 [ERROR] 2022-09-27 22:50:15.592 [main] logTest - This is error message
 [FATAL] 2022-09-27 22:50:15.594 [main] logTest - This is fatal message
+[DEBUG] 2022-10-01 00:22:04.452 [main] logTest - This is debug message
+[INFO ] 2022-10-01 00:22:04.454 [main] logTest - This is info message
+[WARN ] 2022-10-01 00:22:04.454 [main] logTest - This is warn message
+[ERROR] 2022-10-01 00:22:04.454 [main] logTest - This is error message
+[FATAL] 2022-10-01 00:22:04.455 [main] logTest - This is fatal message

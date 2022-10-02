@@ -510,7 +510,19 @@ public static void checkRecentlyCreatedContactTC27() throws InterruptedException
     driver.close();
 }
 
-
+@Test
+public static void checkMyContactsTC28() throws InterruptedException {
+	loginToSalesforceMethod();
+	WebElement contact = driver.findElement(By.id("Contact_Tab"));
+    clickElement(contact,"contact");
+    Thread.sleep(1900);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    WebElement view = driver.findElement(By.name("fcf"));
+    Select viewSel = new Select(view);
+    viewSel.selectByVisibleText("My Contacts");
+    Thread.sleep(2000);
+    driver.close();
+}	
 
 }
 

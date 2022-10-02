@@ -494,6 +494,24 @@ public static void createNewViewContactTC26() throws InterruptedException{
     driver.close();
 	}
 
+@Test
+public static void checkRecentlyCreatedContactTC27() throws InterruptedException {
+	CommonUtilities CU = new CommonUtilities();
+    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+	loginToSalesforceMethod();
+	WebElement contact = driver.findElement(By.id("Contact_Tab"));
+    clickElement(contact,"contact");
+    Thread.sleep(1900);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    WebElement rsel = driver.findElement(By.name("hotlist_mode"));
+    Select recently = new Select(rsel);
+    recently.selectByVisibleText("Recently Created");
+    Thread.sleep(2000);
+    driver.close();
+}
+
+
+
 }
 
 

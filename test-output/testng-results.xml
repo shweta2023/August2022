@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="17" total="18" passed="1" failed="0" skipped="0">
+<testng-results ignored="18" total="19" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-02T12:52:17 PDT" name="Suite1" finished-at="2022-10-02T12:52:38 PDT" duration-ms="20409">
+  <suite started-at="2022-10-02T13:06:21 PDT" name="Suite1" finished-at="2022-10-02T13:06:40 PDT" duration-ms="19715">
     <groups>
     </groups>
-    <test started-at="2022-10-02T12:52:17 PDT" name="Firefox Tests" finished-at="2022-10-02T12:52:38 PDT" duration-ms="20409">
+    <test started-at="2022-10-02T13:06:21 PDT" name="Firefox Tests" finished-at="2022-10-02T13:06:40 PDT" duration-ms="19715">
       <class name="com.firebase.test.tests.AutomationTest">
-        <test-method is-config="true" signature="setupBeforeTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@2bb3058]" started-at="2022-10-02T12:52:17 PDT" name="setupBeforeTest" finished-at="2022-10-02T12:52:17 PDT" duration-ms="108" status="PASS">
+        <test-method is-config="true" signature="setupBeforeTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@7a362b6b]" started-at="2022-10-02T13:06:21 PDT" name="setupBeforeTest" finished-at="2022-10-02T13:06:21 PDT" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBeforeTest -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.firebase.test.tests.AutomationTest@2bb3058]" started-at="2022-10-02T12:52:17 PDT" name="setUp" finished-at="2022-10-02T12:52:20 PDT" duration-ms="2456" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.firebase.test.tests.AutomationTest@7a362b6b]" started-at="2022-10-02T13:06:21 PDT" name="setUp" finished-at="2022-10-02T13:06:23 PDT" duration-ms="2641" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,36 +20,36 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[public static void com.firebase.test.tests.AutomationTest.createNewViewContactTC26() throws java.lang.InterruptedException]]>
+                <![CDATA[public static void com.firebase.test.tests.AutomationTest.checkRecentlyCreatedContactTC27() throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="createNewViewContactTC26()[pri:0, instance:com.firebase.test.tests.AutomationTest@2bb3058]" started-at="2022-10-02T12:52:20 PDT" name="createNewViewContactTC26" finished-at="2022-10-02T12:52:32 PDT" duration-ms="12508" status="PASS">
+        <test-method signature="checkRecentlyCreatedContactTC27()[pri:0, instance:com.firebase.test.tests.AutomationTest@7a362b6b]" started-at="2022-10-02T13:06:23 PDT" name="checkRecentlyCreatedContactTC27" finished-at="2022-10-02T13:06:35 PDT" duration-ms="11641" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createNewViewContactTC26 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.firebase.test.tests.AutomationTest@2bb3058]" started-at="2022-10-02T12:52:32 PDT" name="tearDown" finished-at="2022-10-02T12:52:37 PDT" duration-ms="5031" status="FAIL">
+        </test-method> <!-- checkRecentlyCreatedContactTC27 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.firebase.test.tests.AutomationTest@7a362b6b]" started-at="2022-10-02T13:06:35 PDT" name="tearDown" finished-at="2022-10-02T13:06:40 PDT" duration-ms="5032" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
               <![CDATA[invalid session id
 Build info: version: '4.5.0', revision: 'fe167b119a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f2ee28125ab7243b9062bd173a01998a, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\shwet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54825}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54825/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f2ee28125ab7243b9062bd173a01998a]]>
+Command: [9ac0042227d61a1d36f40623c1757f89, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\shwet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55468}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55468/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9ac0042227d61a1d36f40623c1757f89]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: '4.5.0', revision: 'fe167b119a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f2ee28125ab7243b9062bd173a01998a, close {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\shwet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54825}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54825/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f2ee28125ab7243b9062bd173a01998a
+Command: [9ac0042227d61a1d36f40623c1757f89, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\shwet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55468}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55468/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9ac0042227d61a1d36f40623c1757f89
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -102,7 +102,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDownAfterTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@2bb3058]" started-at="2022-10-02T12:52:37 PDT" name="tearDownAfterTest" finished-at="2022-10-02T12:52:38 PDT" duration-ms="258" status="PASS">
+        <test-method is-config="true" signature="tearDownAfterTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@7a362b6b]" started-at="2022-10-02T13:06:40 PDT" name="tearDownAfterTest" finished-at="2022-10-02T13:06:40 PDT" duration-ms="242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAfterTest -->

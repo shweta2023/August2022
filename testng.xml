@@ -9,7 +9,7 @@
       <class name="com.firebase.test.tests.AutomationTest">
       
      <methods>
-        <include name="viewContactTC29()"></include>
+        <include name="checkErrorTC30()"></include>
        
       </methods>
       

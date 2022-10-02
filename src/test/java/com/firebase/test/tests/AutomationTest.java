@@ -471,10 +471,31 @@ public static void createNewContactTC25() throws InterruptedException{
       Accountname1.sendKeys( CU.getApplicationProperty("Accountname",applicationPropertiesFile));
       WebElement save = driver.findElement(By.name("save"));
       	save.click();
- 
+      	
  
 } 
+@Test
+
+
+public static void createNewViewContactTC26() throws InterruptedException{
+	CommonUtilities CU = new CommonUtilities();
+    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+	loginToSalesforceMethod();
+	WebElement contact = driver.findElement(By.id("Contact_Tab"));
+    clickElement(contact,"contact");
+    Thread.sleep(1900);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    WebElement cNW = driver.findElement(By.xpath("//*[@id=\"filter_element\"]/div/span/span[2]/a[2]"));
+    cNW.click();
+    WebElement viewName = driver.findElement(By.id("fname"));
+    viewName.sendKeys(applicationPropertiesFile.getProperty("viewName"));
+    WebElement save = driver.findElement(By.name("save"));
+    save.click();
+    driver.close();
+	}
+
 }
+
 
 
 

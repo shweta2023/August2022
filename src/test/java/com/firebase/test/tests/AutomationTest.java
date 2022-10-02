@@ -446,11 +446,23 @@ public static void chromeTC06() throws IOException, InterruptedException {
  
  
 }
+@Test
 
 
+public static void createNewContactTC25() throws InterruptedException{
+	 CommonUtilities CU = new CommonUtilities();
+	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+	    
+	    CU.getApplicationProperty("laname",applicationPropertiesFile);
+	    CU.getApplicationProperty("Accountname",applicationPropertiesFile);
+	   loginToSalesforceMethod();
+       WebElement contact = driver.findElement(By.id("Contact_Tab"));
+       clickElement(contact,"contact");
+       WebElement new1 = driver.findElement(By.name("new"));
+       clickElement(new1,"New");
  
  
- 
+} 
 }
 
 

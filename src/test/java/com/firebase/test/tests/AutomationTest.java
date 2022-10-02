@@ -491,7 +491,6 @@ public static void createNewViewContactTC26() throws InterruptedException{
     viewName.sendKeys(applicationPropertiesFile.getProperty("viewName"));
     WebElement save = driver.findElement(By.name("save"));
     save.click();
-    driver.close();
 	}
 
 @Test
@@ -507,7 +506,6 @@ public static void checkRecentlyCreatedContactTC27() throws InterruptedException
     Select recently = new Select(rsel);
     recently.selectByVisibleText("Recently Created");
     Thread.sleep(2000);
-    driver.close();
 }
 
 @Test
@@ -521,7 +519,6 @@ public static void checkMyContactsTC28() throws InterruptedException {
     Select viewSel = new Select(view);
     viewSel.selectByVisibleText("My Contacts");
     Thread.sleep(2000);
-    driver.close();
 }	
 
 @Test
@@ -551,9 +548,44 @@ public static void checkErrorTC30() throws Exception {
 	    viewName.sendKeys(applicationPropertiesFile.getProperty("viewName"));
 	    WebElement save = driver.findElement(By.name("save"));
 	    save.click();
-	    driver.close();
-}
+	}
 
+@Test
+public static void checkCancelTC31() throws Exception{
+	CommonUtilities CU = new CommonUtilities();
+    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+    loginToSalesforceMethod();
+		WebElement contact = driver.findElement(By.id("Contact_Tab"));
+	    clickElement(contact,"contact");
+	    Thread.sleep(1900);
+	    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+	    WebElement cNW = driver.findElement(By.xpath("//*[@id=\"filter_element\"]/div/span/span[2]/a[2]"));
+	    cNW.click();
+	    WebElement viewName = driver.findElement(By.id("fname"));
+	    viewName.sendKeys(applicationPropertiesFile.getProperty("viewName"));
+	    WebElement cancel = driver.findElement(By.name("cancel"));
+	    cancel.click();
+	    
+}
+@Test
+public static void checkSaveAndNewTC32() throws Exception{
+CommonUtilities CU = new CommonUtilities();
+Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+loginToSalesforceMethod();
+	WebElement contact = driver.findElement(By.id("Contact_Tab"));
+    clickElement(contact,"contact");
+    Thread.sleep(1900);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    WebElement New = driver.findElement(By.name("new"));
+    New.click();
+    WebElement lname = driver.findElement(By.name("name_lastcon2"));
+    lname.sendKeys(applicationPropertiesFile.getProperty("lbname"));
+    WebElement ACname = driver.findElement(By.name("con4"));
+    ACname.sendKeys(applicationPropertiesFile.getProperty("Accountname"));
+    WebElement saveNew = driver.findElement(By.name("save_new"));
+    saveNew.click();
+    
+}
 }
 
 

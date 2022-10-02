@@ -9,7 +9,7 @@
       <class name="com.firebase.test.tests.AutomationTest">
       
      <methods>
-        <include name="checkErrorTC30()"></include>
+        <include name="checkSaveAndNewTC32()"></include>
        
       </methods>
       

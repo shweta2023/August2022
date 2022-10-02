@@ -7,10 +7,10 @@
       <class name="com.firebase.test.tests.AutomationTest">
         <methods>
           <include name="tearDownAfterTest"/>
+          <include name="verifyTC34"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="setupBeforeTest"/>
-          <include name="mergeAccountsTC13"/>
         </methods>
       </class> <!-- com.firebase.test.tests.AutomationTest -->
     </classes>

@@ -5,11 +5,36 @@
     <classes>
       <class name="com.firebase.test.tests.AutomationTest">
         <methods>
+          <include name="checkErrorTC30"/>
+          <include name="verifyTC34"/>
+          <include name="loginToSalesforce1"/>
+          <include name="salesforceTC22DefaultVeiw"/>
+          <include name="chromeTC06"/>
+          <include name="mergeAccountsTC13"/>
+          <include name="chromeTC05"/>
+          <include name="salesforceTC17"/>
           <include name="tearDownAfterTest"/>
+          <include name="salesforceTC15"/>
+          <include name="checkSaveAndNewTC32"/>
+          <include name="salesforceTC18"/>
+          <include name="salesforceTC19"/>
+          <include name="checkRecentlyCreatedContactTC27"/>
+          <include name="checkCancelTC31"/>
+          <include name="salesforceTC20leadsTab"/>
           <include name="tearDown"/>
-          <include name="salesforceTC24leadsTab"/>
+          <include name="createNewViewContactTC26"/>
+          <include name="loginErrorMessage"/>
+          <include name="ForgotPassword4A"/>
           <include name="setUp"/>
+          <include name="ForgotPassword4B"/>
           <include name="setupBeforeTest"/>
+          <include name="viewContactTC29"/>
+          <include name="checkRememberMe3"/>
+          <include name="checkMyContactsTC28"/>
+          <include name="salesforceTC23leadsTab"/>
+          <include name="salesforceTC24leadsTab"/>
+          <include name="createNewContactTC25"/>
+          <include name="salesforceTC21leadsTab"/>
         </methods>
       </class> <!-- com.firebase.test.tests.AutomationTest -->
     </classes>

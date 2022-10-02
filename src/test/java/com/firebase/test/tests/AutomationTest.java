@@ -253,7 +253,6 @@ public static void chromeTC06() throws IOException, InterruptedException {
           WebElement mergeb = driver.findElement(By.name("save"));
           mergeb.click();
           driver.switchTo().alert().accept();
-          driver.switchTo().alert().dismiss();
 
       }
    @Test
@@ -610,7 +609,29 @@ loginToSalesforceMethod();
     
 	}
 
-
+@Test
+public static void verifyTC34() throws Exception{
+	CommonUtilities CU = new CommonUtilities();
+	Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+	loginToSalesforceMethod();
+	WebElement home = driver.findElement(By.xpath("//*[@id=\"home_Tab\"]/a"));
+	home.click();
+	Thread.sleep(2500);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+	WebElement profile = driver.findElement(By.xpath("//*[@id=\"ptBody\"]/div/div[2]/span[1]/h1/a"));
+	profile.click();
+	WebElement edit = driver.findElement(By.xpath("//*[@id=\"chatterTab\"]/div[2]/div[2]/div[1]/h3/div/div/a"));
+	edit.click();
+	driver.switchTo().frame(2);
+	WebElement about = driver.findElement(By.xpath("//*[@id=\"aboutTab\"]/a"));
+	about.click();
+	WebElement lname = driver.findElement(By.name("lastName"));
+	lname.clear();
+	lname.sendKeys(applicationPropertiesFile.getProperty("lcname"));
+	WebElement saveAll = driver.findElement(By.xpath("//*[@id=\"TabPanel\"]/div/div[2]/form/div/input[1]"));
+	saveAll.click();
+	
+}
 
 }
 

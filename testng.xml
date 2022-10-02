@@ -9,7 +9,7 @@
       <class name="com.firebase.test.tests.AutomationTest">
       
      <methods>
-        <include name="mergeAccountsTC13()"></include>
+        <include name="verifyTC34()"></include>
        
       </methods>
       

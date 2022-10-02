@@ -8,9 +8,9 @@
         <methods>
           <include name="tearDownAfterTest"/>
           <include name="tearDown"/>
-          <include name="createNewContactTC25"/>
           <include name="setUp"/>
           <include name="setupBeforeTest"/>
+          <include name="mergeAccountsTC13"/>
         </methods>
       </class> <!-- com.firebase.test.tests.AutomationTest -->
     </classes>

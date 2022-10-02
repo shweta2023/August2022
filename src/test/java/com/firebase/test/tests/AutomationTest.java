@@ -232,7 +232,30 @@ public static void chromeTC06() throws IOException, InterruptedException {
 		
 }
       
+      @Test
+      public static void mergeAccountsTC13() throws Exception{
+      	CommonUtilities CU = new CommonUtilities();
+      	Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+      	loginToSalesforceMethod();
+      	WebElement Account = driver.findElement(By.xpath("//*[@id=\"Account_Tab\"]/a"));
+          clickElement(Account,"Account");
+          Thread.sleep(1900);
+          clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+          WebElement merge = driver.findElement(By.xpath("//*[@id=\"toolsContent\"]/tbody/tr/td[2]/div/div/div/ul/li[4]/span/a"));
+          merge.click();
+          WebElement fText = driver.findElement(By.name("srch"));
+          fText.sendKeys(applicationPropertiesFile.getProperty("Accountname"));
+          WebElement find = driver.findElement(By.name("srchbutton"));
+          find.click();
+          WebElement next = driver.findElement(By.name("goNext"));
+          next.click();
      
+          WebElement mergeb = driver.findElement(By.name("save"));
+          mergeb.click();
+          driver.switchTo().alert().accept();
+          driver.switchTo().alert().dismiss();
+
+      }
    @Test
    
       
@@ -585,7 +608,10 @@ loginToSalesforceMethod();
     WebElement saveNew = driver.findElement(By.name("save_new"));
     saveNew.click();
     
-}
+	}
+
+
+
 }
 
 

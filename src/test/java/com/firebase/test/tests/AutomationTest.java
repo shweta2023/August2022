@@ -458,8 +458,19 @@ public static void createNewContactTC25() throws InterruptedException{
 	   loginToSalesforceMethod();
        WebElement contact = driver.findElement(By.id("Contact_Tab"));
        clickElement(contact,"contact");
+       Thread.sleep(1900);
+       clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
        WebElement new1 = driver.findElement(By.name("new"));
        clickElement(new1,"New");
+       WebElement laname1 = driver.findElement(By.id("name_lastcon2"));
+       laname1.clear();
+       laname1.sendKeys( CU.getApplicationProperty("laname",applicationPropertiesFile));
+     		
+      WebElement Accountname1 = driver.findElement(By.id("con4"));
+      Accountname1.clear();
+      Accountname1.sendKeys( CU.getApplicationProperty("Accountname",applicationPropertiesFile));
+      WebElement save = driver.findElement(By.name("save"));
+      	save.click();
  
  
 } 

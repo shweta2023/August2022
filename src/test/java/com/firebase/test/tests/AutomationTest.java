@@ -524,7 +524,17 @@ public static void checkMyContactsTC28() throws InterruptedException {
     driver.close();
 }	
 
-}
+@Test
+public static void viewContactTC29() throws InterruptedException {
+	
+    loginToSalesforceMethod();
+	WebElement contact = driver.findElement(By.id("Contact_Tab"));
+    clickElement(contact,"contact");
+    Thread.sleep(1900);
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    WebElement rname = driver.findElement(By.xpath("//*[@id=\"bodyCell\"]/div[3]/div[1]/div/div[2]/table/tbody/tr[2]/th/a"));
+	clickElement(rname, "random Name");
+}}
 
 
 

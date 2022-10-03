@@ -9,7 +9,7 @@
       <class name="com.firebase.test.tests.AutomationTest">
       
      <methods>
-        <include name="blockEventTC36()"></include>
+        <include name="createAccountReportTC14()"></include>
        
       </methods>
       

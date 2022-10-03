@@ -6,11 +6,11 @@
     <classes>
       <class name="com.firebase.test.tests.AutomationTest">
         <methods>
-          <include name="blockEventTC36"/>
           <include name="tearDownAfterTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="setupBeforeTest"/>
+          <include name="createAccountReportTC14"/>
         </methods>
       </class> <!-- com.firebase.test.tests.AutomationTest -->
     </classes>

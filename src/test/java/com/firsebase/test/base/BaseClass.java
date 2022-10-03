@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -63,13 +64,25 @@ public class BaseClass  {
 		}
 		
 		@AfterMethod
-		public static void tearDown() {
+		public static void tearDown(ITestResult result) {
 			Logger.info("After method execution has started");
 			closeBrowser();
+			  if(result.getStatus() == ITestResult.FAILURE) {
+				  report.logTestfailed(null);
+		        }
+		        else if(result.getStatus() == ITestResult.SUCCESS) {
+					  report.logTestPassed(null);
+		        }
+		        else {
+					  report.logTestSkipped(null);
+		        }
+			  System.out.println("kk");
 		}
 	@AfterTest
-	public static void tearDownAfterTest() {
-		report.endReport();
+	public static void tearDownAfterTest(ITestResult result) {
+		
+			report.endReport();
+
 	}
 	
 	public static void getdriver(String browser) {
@@ -112,10 +125,11 @@ public static void clearElement(WebElement element, String objname) {
 		if(element.isDisplayed()) {
 			
 			element.click();
-			Logger.info("pass" + objname + "element is clicked");
+			report.logTestInfo("pass" + objname + "element is clicked");
 		}
 		else {
-			Logger.error("Fail" + objname +"element is not displayed ");
+			report.logTestInfo("Fail" + objname +"element is not displayed ");
+
 		}
 	}
 	public static void closeBrowser(){
@@ -229,7 +243,36 @@ public static void clearElement(WebElement element, String objname) {
 		      }
 		    }
 		 Assert.assertTrue(match);
-		report.logTestPassed("Passed Validation");
+		report.logTestInfo("Passed Validation");
 	
 		 }
-	}	
+	public static void Report() {
+		 try{
+			   WebElement AvailTab = driver.findElement(By.id("duel_select_0"));
+			   Select select1 = new Select(AvailTab);
+			   select1.selectByVisibleText("Reports");
+			   Thread.sleep(2000);
+			    WebElement addBu = driver.findElement(By.id("duel_select_0_right"));
+			   clickElement(addBu, "AddButton");
+			    Thread.sleep(2000);
+			    WebElement Save = driver.findElement(By.xpath("//input[@title='Save']"));
+			    clickElement(Save,"Save");
+		  }catch(Exception e) {
+			  return;
+		  }
+	 
+	}
+    public static void verifyLinkAvailability(WebElement element) {
+    	List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+
+    	for(WebElement specificlink : allLinks ) {
+
+    	    if(specificlink.getText().equals("link Text")){
+
+    	    //SOPL("Link found");
+
+    	    break;
+            }
+	     }	
+     }
+ }

@@ -61,6 +61,7 @@ public class GenerateReports {
 					ExtentColor.ORANGE));
 		}
 		public void endReport() {
+		
 			extent.flush();
 		}
 			

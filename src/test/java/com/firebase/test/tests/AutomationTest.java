@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.core.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -155,15 +156,15 @@ public static void chromeTC06() throws IOException, InterruptedException {
 		WebElement myprofile = driver.findElement(By.xpath("//a[@title='My Profile']"));
 		//Actions action = new Actions(driver);
 		//action.moveToElement(myprofile).build().perform();
-		clickElement(myprofile,"my profile");
-		waitUntilVisible(myprofile,"my profile");
 		Thread.sleep(2000);
+
+		clickElement(myprofile,"my profile");
+		Thread.sleep(4000);
 
 		//Edit Profile
 		System.out.println("Inside chromeTC06");
 		WebElement editprofile = driver.findElement(By.xpath("//*[@id=\"chatterTab\"]/div[2]/div[2]/div[1]/h3/div/div/a"));
-		waitUntilVisible(editprofile,"editprofile");
-		//clickElement(editprofile,"edit profile");
+		clickElement(editprofile,"edit profile");
 		driver.switchTo().frame(2);
 		Thread.sleep(2000);
 		WebElement about = driver.findElement(By.xpath("//*[@id=\"aboutTab\"]/a"));
@@ -229,7 +230,210 @@ public static void chromeTC06() throws IOException, InterruptedException {
 		
 		
 }
-      
+      @Test
+      public static void chromeTC07(String browsername) throws IOException, InterruptedException {
+    		 
+    	  CommonUtilities CU = new CommonUtilities();
+    	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+    		loginToSalesforceMethod();
+    		WebElement username = driver.findElement(By.id("username"));
+    		enterText(username,applicationPropertiesFile.getProperty("valid-username"),"user name");
+    		WebElement password = driver.findElement(By.id("password"));
+    		enterText(password,applicationPropertiesFile.getProperty("valid-password"),"pass word");
+    	    WebElement rememberme = driver.findElement(By.name("rememberUn"));
+    	    clickElement(rememberme,"remember me");
+    		WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+    	    clickElement(loginbutton,"login button");
+    		WebElement shradha= driver.findElement(By.id("userNav"));
+    		clickElement(shradha,"shradha");
+    		Thread.sleep(2000);
+    		WebElement mysettings= driver.findElement(By.xpath("//*[@id=\"userNav-menuItems\"]/a[2]"));
+    		clickElement(mysettings,"My settings");
+    		WebElement personal= driver.findElement(By.id("PersonalInfo_font"));
+    	    clickElement(personal, "Personal");
+    	    Thread.sleep(2000);
+    	    WebElement loginhistory= driver.findElement(By.id("LoginHistory_font"));
+    	    clickElement(loginhistory, "Login History");
+    	    Thread.sleep(1000);
+    	    WebElement downloadhistory= driver.findElement(By.xpath("//*[@id=\"RelatedUserLoginHistoryList_body\"]/div/a"));
+    	   // clickElement(downloadhistory,"Download History");
+    	    WebElement personal1= driver.findElement(By.id("PersonalInfo_font"));
+    	    clickElement(personal1, "Personal");
+    	    Thread.sleep(6000);
+    	   
+    	    WebElement displaylayout= driver.findElements(By.className("setupFolder")).get(1);
+    	    clickElement(displaylayout,"Display layout");
+    	   Thread.sleep(2000);
+    	    WebElement costomizeTabs = driver.findElement(By.id("CustomizeTabs_font"));
+    	    Thread.sleep(1000);
+    	clickElement(costomizeTabs, "customizetab");
+    	    WebElement CustomApp = driver.findElement(By.id("p4"));
+    	    Select select = new Select(CustomApp);
+    	    select.selectByVisibleText("Salesforce Chatter");
+    	    Thread.sleep(2000);
+
+    	    Report();
+    	   
+    	    Thread.sleep(2500);
+    	    WebElement email = driver.findElements(By.className("setupFolder")).get(2);
+    	    clickElement(email,"Email");
+    	    Thread.sleep(2000);
+    	    WebElement myemailsetting = driver.findElement(By.id("EmailSettings_font"));
+    	    clickElement(myemailsetting,"My EmailSettings");
+    	    WebElement emailaddress = driver.findElement(By.id("CollaborationEmailSettings_font"));
+    	    enterText(emailaddress,applicationPropertiesFile.getProperty("valid-Emailaddress"),"Email Address");
+    		Thread.sleep(2000);
+    	   driver.findElement(By.xpath("//input[@id='auto_bcc1']")).click();
+    	   WebElement save1 = driver.findElement(By.xpath("//input[@title='Save']"));
+    	   clickElement(save1,"save1");
+    	   WebElement calenreminder = driver.findElements(By.className("setupFolder")).get(4);
+    	   clickElement(calenreminder,"Calendar Reminder");
+    	   Thread.sleep(2000);
+    	   WebElement actireminders = driver.findElement(By.id("Reminders_font"));
+    	   clickElement(actireminders,"Activity Reminders");
+    	   Thread.sleep(2000);
+    	   WebElement opetestremin = driver.findElement(By.id("testbtn"));
+    	   clickElement(opetestremin,"open test reminder");
+    	   closeBrowser();
+    	   
+    	}
+      @Test
+      public static void chromeTC08(String browsername) throws IOException, InterruptedException {
+    		 
+    		 
+    	  CommonUtilities CU = new CommonUtilities();
+  	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+  		loginToSalesforceMethod();
+    		WebElement username = driver.findElement(By.id("username"));
+    		enterText(username,applicationPropertiesFile.getProperty("valid-username"),"user name");
+    		WebElement password = driver.findElement(By.id("password"));
+    		enterText(password,applicationPropertiesFile.getProperty("valid-password"),"pass word");
+    	    WebElement rememberme = driver.findElement(By.name("rememberUn"));
+    	    clickElement(rememberme,"remember me");
+    		WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+    	    clickElement(loginbutton,"login button");
+    		WebElement shradha= driver.findElement(By.id("userNav"));
+    		clickElement(shradha,"shradha");
+    		Thread.sleep(2000);
+    	   WebElement developerconsole = driver.findElement(By.xpath("/html/body/div[1]/div[1]/table/tbody/tr/td[3]/div/div[3]/div/div/div[2]/div[3]/a[3]"));
+    	   clickElement(developerconsole,"Developer Console");
+    	   Thread.sleep(2000);
+    	  // driver.switchTo().defaultContent();
+    	  // driver.close();
+    	   Iterator<String> it = driver.getWindowHandles().iterator();
+    	   it.next();
+    	   String bn = it.next();
+    	   driver.switchTo().window(bn);
+    	   Thread.sleep(2000);
+    	   driver.close();
+      }
+    	@Test
+    	public static void chromeTC10CreateAccount(String browsername) throws IOException, InterruptedException {
+    		  CommonUtilities CU = new CommonUtilities();
+    	  	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+    	  		loginToSalesforceMethod();
+    		 
+    		//WebElement username = driver.findElement(By.id("username"));
+    		//enterText(username,applicationPropertiesFile.getProperty("valid-username"),"user name");
+    		//WebElement password = driver.findElement(By.id("password"));
+    		//enterText(password,applicationPropertiesFile.getProperty("valid-password"),"pass word");
+    	   // WebElement rememberme = driver.findElement(By.name("rememberUn"));
+    	   // clickElement(rememberme,"remember me");
+    		//WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+    	    //clickElement(loginbutton,"login button");
+    		WebElement shradha= driver.findElement(By.id("userNav"));
+    		clickElement(shradha,"shradha");
+    		Thread.sleep(2000);
+    	   WebElement accounts = driver.findElement(By.xpath("//a[@title ='Accounts Tab']"));
+    	   clickElement(accounts,"Accounts");
+    	   Thread.sleep(2000);
+    		WebElement page = driver.findElement(By.id("tryLexDialogX")) ;  
+    		clickElement(page,"Page");
+    	   }
+
+    	@Test
+    	public static void chromeTC11CreateNewView(String browsername) throws IOException, InterruptedException {
+    		 CommonUtilities CU = new CommonUtilities();
+ 	  	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+ 	  		loginToSalesforceMethod();
+    			//WebElement username = driver.findElement(By.id("username"));
+    			//enterText(username,applicationPropertiesFile.getProperty("valid-username"),"user name");
+    			//WebElement password = driver.findElement(By.id("password"));
+    			//enterText(password,applicationPropertiesFile.getProperty("valid-password"),"pass word");
+    		    //WebElement rememberme = driver.findElement(By.name("rememberUn"));
+    		   //WebElement loginbutton = driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+    		    //clickElement(loginbutton,"login button");
+    			WebElement shradha= driver.findElement(By.id("userNav"));
+    			clickElement(shradha,"shradha");
+    			Thread.sleep(2000);
+
+    		   WebElement accounts = driver.findElement(By.xpath("//a[@title ='Accounts Tab']"));
+    		   clickElement(accounts,"Accounts");
+    		   Thread.sleep(2000);
+    		  
+    			WebElement page = driver.findElement(By.id("tryLexDialogX")) ;  
+    			clickElement(page,"Page");
+    			
+    			WebElement createnewview = driver.findElement(By.xpath("//*[@id=\"filter_element\"]/div/span/span[2]/a[2]"));
+    			clickElement(createnewview,"create new view");
+    			Thread.sleep(2000);
+    			WebElement viewname = driver.findElement(By.id("fname"));
+    			enterText(viewname,applicationPropertiesFile.getProperty("viewname"),"View Name");
+    			Thread.sleep(1000);
+    			WebElement viewuniquename = driver.findElement(By.id("devname"));
+    			clickElement(viewuniquename,"View unique Name");
+    		   WebElement save = driver.findElement(By.name("save"));
+    		   clickElement(save,"save");
+    		   Thread.sleep(2000);
+    		   closeBrowser();
+    		   
+
+
+    		}
+@Test
+    		public static void chromeTC12EditView(String browsername) throws IOException, InterruptedException {
+    			 CommonUtilities CU = new CommonUtilities();
+     	  	    Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+     	  		loginToSalesforceMethod();
+     		//WebElement username = driver.findElement(By.id("username"));
+    			//enterText(username,applicationPropertiesFile.getProperty("valid-username"),"user name");
+    			//enterText(password,applicationPropertiesFile.getProperty("valid-password"),"pass word");
+    		   // WebElement rememberme = driver.findElement(By.name("rememberUn"));
+    		   // clickElement(rememberme,"remember me");
+    			// clickElement(loginbutton,"login button");
+    			//WebElement shradha= driver.findElement(By.id("userNav"));
+    			//clickElement(shradha,"shradha");
+    			//Thread.sleep(2000);
+    		   WebElement accounts = driver.findElement(By.xpath("//a[@title ='Accounts Tab']"));
+    		   clickElement(accounts,"Accounts");
+    		   Thread.sleep(2000);
+    		  
+    			WebElement page = driver.findElement(By.id("tryLexDialogX")) ;  
+    			clickElement(page,"Page");
+    			WebElement view = driver.findElement(By.name("fcf"));
+    		    Select select = new Select(view);
+    		    select.selectByVisibleText("newview");
+    		    Thread.sleep(2000);
+    		   WebElement edit = driver.findElement(By.xpath("//*[@id=\"filter_element\"]/div/span/span[2]/a[1]"));
+    		   clickElement(edit,"Edit");
+    		   
+    			WebElement viewname = driver.findElement(By.id("fname"));
+    			enterText(viewname,applicationPropertiesFile.getProperty("viewname1"),"View Name");
+    			Thread.sleep(1000);
+    			WebElement viewuniquename = driver.findElement(By.id("devname"));
+    			enterText(viewuniquename,applicationPropertiesFile.getProperty("viewuniquename1"),"View unique Name");
+    			clickElement(viewuniquename,"View unique Name");
+    			WebElement field = driver.findElement(By.id("fcol1"));
+    		    field.click();
+    			Select select1 = new Select(field);
+    		    Thread.sleep(1000);
+    		    //select.selectByVisibleText("Account Name");
+    		    Thread.sleep(2000);
+    		   
+
+
+
+    		}
       @Test
       public static void mergeAccountsTC13() throws Exception{
       	CommonUtilities CU = new CommonUtilities();
@@ -253,6 +457,55 @@ public static void chromeTC06() throws IOException, InterruptedException {
           driver.switchTo().alert().accept();
 
       }
+      
+      @Test
+      public static void createAccountReportTC14() throws Exception{
+      	CommonUtilities CU = new CommonUtilities();
+      	Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+      	loginToSalesforceMethod();
+      	WebElement Account = driver.findElement(By.xpath("//*[@id=\"Account_Tab\"]/a"));
+        clickElement(Account,"Account");
+        Thread.sleep(1900);
+        clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+        WebElement accountsReport = driver.findElement(By.linkText("Accounts with last activity > 30 days")) ;
+        clickElement(accountsReport,"Account Report");
+        WebElement fromdate = driver.findElement(By.name("startDate"));
+	    fromdate.clear();
+	    fromdate.sendKeys(applicationPropertiesFile.getProperty("from"));
+	    Thread.sleep(3000);
+	    WebElement todate = driver.findElement(By.name("endDate"));
+	    todate.clear();
+	    todate.sendKeys(applicationPropertiesFile.getProperty("to"));
+	    Thread.sleep(3000);
+	    WebElement save = driver.findElement(By.id("ext-gen49"));
+	    clickElement(save,"save");
+	    Thread.sleep(2000);
+	    WebElement reportname = driver.findElement(By.id("saveReportDlg_reportNameField"));
+	    reportname.clear();
+	    reportname.sendKeys(applicationPropertiesFile.getProperty("reportname"));
+	    Thread.sleep(2000);
+	    WebElement reportUniquename = driver.findElement(By.id("saveReportDlg_DeveloperName"));
+	    reportUniquename.click();
+	    Thread.sleep(2000);
+	    WebElement SaveNRunReport = driver.findElement(By.xpath("//*[@id='dlgSaveAndRun']//em//button"));
+        clickElement(SaveNRunReport,"Save and Run Report");
+        Thread.sleep(4000);
+        fullScreenshot();
+      
+      }  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
    @Test
    
       
@@ -272,6 +525,14 @@ public static void chromeTC06() throws IOException, InterruptedException {
 	   waitUntilVisible(view,"view");
 	   
       }
+   
+   
+   
+   
+   
+   
+   
+   
    @Test
    
    
@@ -372,27 +633,7 @@ public static void chromeTC06() throws IOException, InterruptedException {
 	   }   
 	   
  @Test
- 
- 
- public static void salesforceTC23leadsTab() throws InterruptedException{
-	   loginToSalesforceMethod();
-	   WebElement leads = driver.findElement(By.id("Lead_Tab"));
-	   clickElement(leads,"leads");
-	   Thread.sleep(1400);
-	   clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
-	   WebElement view = driver.findElement(By.name("fcf"));
-	   Select select1 = new Select(view);
-	    select1.selectByVisibleText("Today's Leads");
-	    Thread.sleep(2000);
-       WebElement go = driver.findElement(By.name("go"));
-       clickElement(go,"Go");
-       report.logTestPassed("test is passed");
-       
-}
- 
- 
- @Test
- 
+  
  
  public static void salesforceTC22DefaultVeiw() throws InterruptedException{
 	 CommonUtilities CU = new CommonUtilities();
@@ -430,6 +671,25 @@ public static void chromeTC06() throws IOException, InterruptedException {
 	    report.logTestPassed("test is passed");
 	       
  }
+ @Test
+ public static void salesforceTC23leadsTab() throws InterruptedException{
+	   loginToSalesforceMethod();
+	   WebElement leads = driver.findElement(By.id("Lead_Tab"));
+	   clickElement(leads,"leads");
+	   Thread.sleep(1400);
+	   clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+	   WebElement view = driver.findElement(By.name("fcf"));
+	   Select select1 = new Select(view);
+	    select1.selectByVisibleText("Today's Leads");
+	    Thread.sleep(2000);
+       WebElement go = driver.findElement(By.name("go"));
+       clickElement(go,"Go");
+       report.logTestPassed("test is passed");
+       
+}
+ 
+ 
+ 
  
 @Test
  
@@ -606,6 +866,30 @@ loginToSalesforceMethod();
     saveNew.click();
     
 	}
+@Test
+public static void salesforceTC33() throws Exception{
+	loginToSalesforceMethod();
+	WebElement hometab = driver.findElement(By.id("home_Tab"));
+	clickElement(hometab,"HomeTab");
+	Thread.sleep(3900);
+	System.out.println("i am here");
+    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+    //Thread.sleep(5900);
+	WebElement name = driver.findElement(By.linkText("Shweta Mittal"));
+	verifyLinkAvailability(name);
+	clickElement(name,"name");
+	Thread.sleep(2900);
+	String strUrl = driver.getCurrentUrl();
+	Thread.sleep(2900);
+	WebElement shwetamittal = driver.findElement(By.id("userNavLabel"));
+	clickElement(shwetamittal,"shwetamittal");
+	WebElement myprofile = driver.findElement(By.xpath("//*[@id=\"userNav-menuItems\"]/a[1]"));
+	clickElement(myprofile,"myprofile");
+	//waitUntilVisible(myprofile,"myprofile");
+	String strUr2 = driver.getCurrentUrl();
+	strUr2.contains(strUrl);
+}
+
 
 @Test
 public static void verifyTC34() throws Exception{
@@ -685,8 +969,63 @@ public static void tabCustomizationTC35() throws InterruptedException {
 	    WebElement save = driver.findElement(By.name("save"));
 	    save.click();
 	}
-}
+	@Test
+	public static void blockAnyTC37() throws Exception{
+		CommonUtilities CU = new CommonUtilities();
+		Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+		loginToSalesforceMethod();
+		WebElement home = driver.findElement(By.xpath("//*[@id=\"home_Tab\"]/a"));
+	    home.click();
+	    Thread.sleep(2700);
+	    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+	    WebElement currentDate = driver.findElement(By.xpath("//*[@id=\"ptBody\"]/div/div[2]/span[2]/a"));
+	    currentDate.click();
+	    Thread.sleep(1500);
+	    WebElement four = driver.findElement(By.xpath("//*[@id=\"p:f:j_id25:j_id61:20:j_id64\"]/a"));
+	    four.click();
+	    WebElement subjectCombo = driver.findElement(By.xpath("//*[@id=\"ep\"]/div[2]/div[4]/table/tbody/tr[2]/td[2]/div/a"));
+	    subjectCombo.click();
+	    String oWH = driver.getWindowHandle();
+	    Set<String> wH = driver.getWindowHandles();
+	    for(String handle: wH) {
+	    	if(!oWH.equals(handle)) {
+	    	    driver.switchTo().window(handle);
 
+	    	}
+	    }
+	    WebElement other = driver.findElement(By.xpath("/html/body/div[2]/ul/li[5]/a"));
+	    other.click();
+	    driver.switchTo().window(oWH);
+	    WebElement endTime = driver.findElement(By.name("EndDateTime_time"));
+	    endTime.clear();
+	    endTime.sendKeys(applicationPropertiesFile.getProperty("endTimeTwo"));
+	    Thread.sleep(1200);
+	    WebElement recurrence = driver.findElement(By.name("IsRecurrence"));
+	    recurrence.click();
+	    WebElement weekly = driver.findElement(By.id("rectypeftw"));
+	    weekly.click();
+	    WebElement endDate = driver.findElement(By.name("RecurrenceEndDateOnly"));
+	    endDate.clear();
+	    endDate.sendKeys(applicationPropertiesFile.getProperty("endDate"));
+	    WebElement save = driver.findElement(By.name("save"));
+	    save.click();
+	    		WebElement monthly = driver.findElement(By.xpath("//*[@id=\"bCalDiv\"]/div/div[2]/span[2]/a[3]/img"));
+	    		monthly.click();
+	    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
 
 
 

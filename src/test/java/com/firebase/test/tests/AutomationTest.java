@@ -632,8 +632,38 @@ public static void verifyTC34() throws Exception{
 	saveAll.click();
 	
 }
+@Test
+public static void tabCustomizationTC35() throws InterruptedException {
+	
+    loginToSalesforceMethod();
+    
+    WebElement alltabs = driver.findElement(By.id("AllTab_Tab"));
+    alltabs.click();
+  Thread.sleep(1400);
+    WebElement cMT = driver.findElement(By.name("customize"));
+    cMT.click();
+    Thread.sleep(1400);
+    WebElement selectT = driver.findElement(By.name("duel_select_1"));
+    Select selectTS = new Select(selectT);
+    selectTS.selectByIndex(1);
+    WebElement rm =driver.findElement(By.id("duel_select_0_left"));
+    rm.click();
+    WebElement save = driver.findElement(By.name("save"));
+    save.click();
+    driver.navigate().refresh();
+    
+    
+}
+
+
+
+
 
 }
+
+
+
+
 
 
 

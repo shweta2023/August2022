@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="25" total="26" passed="1" failed="0" skipped="0">
+<testng-results ignored="26" total="27" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-02T14:53:06 PDT" name="Suite1" finished-at="2022-10-02T14:53:35 PDT" duration-ms="28873">
+  <suite started-at="2022-10-02T18:24:49 PDT" name="Suite1" finished-at="2022-10-02T18:25:14 PDT" duration-ms="24305">
     <groups>
     </groups>
-    <test started-at="2022-10-02T14:53:06 PDT" name="Firefox Tests" finished-at="2022-10-02T14:53:35 PDT" duration-ms="28873">
+    <test started-at="2022-10-02T18:24:49 PDT" name="Firefox Tests" finished-at="2022-10-02T18:25:14 PDT" duration-ms="24305">
       <class name="com.firebase.test.tests.AutomationTest">
-        <test-method is-config="true" signature="setupBeforeTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@632ceb35]" started-at="2022-10-02T14:53:06 PDT" name="setupBeforeTest" finished-at="2022-10-02T14:53:06 PDT" duration-ms="131" status="PASS">
+        <test-method is-config="true" signature="setupBeforeTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@1800a575]" started-at="2022-10-02T18:24:49 PDT" name="setupBeforeTest" finished-at="2022-10-02T18:24:50 PDT" duration-ms="127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBeforeTest -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.firebase.test.tests.AutomationTest@632ceb35]" started-at="2022-10-02T14:53:06 PDT" name="setUp" finished-at="2022-10-02T14:53:09 PDT" duration-ms="2904" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.firebase.test.tests.AutomationTest@1800a575]" started-at="2022-10-02T18:24:50 PDT" name="setUp" finished-at="2022-10-02T18:24:52 PDT" duration-ms="2688" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,22 +20,22 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[public static void com.firebase.test.tests.AutomationTest.verifyTC34() throws java.lang.Exception]]>
+                <![CDATA[public static void com.firebase.test.tests.AutomationTest.tabCustomizationTC35() throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyTC34()[pri:0, instance:com.firebase.test.tests.AutomationTest@632ceb35]" started-at="2022-10-02T14:53:09 PDT" name="verifyTC34" finished-at="2022-10-02T14:53:27 PDT" duration-ms="17841" status="PASS">
+        <test-method signature="tabCustomizationTC35()[pri:0, instance:com.firebase.test.tests.AutomationTest@1800a575]" started-at="2022-10-02T18:24:52 PDT" name="tabCustomizationTC35" finished-at="2022-10-02T18:25:06 PDT" duration-ms="13589" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTC34 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.firebase.test.tests.AutomationTest@632ceb35]" started-at="2022-10-02T14:53:27 PDT" name="tearDown" finished-at="2022-10-02T14:53:35 PDT" duration-ms="7533" status="PASS">
+        </test-method> <!-- tabCustomizationTC35 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.firebase.test.tests.AutomationTest@1800a575]" started-at="2022-10-02T18:25:06 PDT" name="tearDown" finished-at="2022-10-02T18:25:13 PDT" duration-ms="7502" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDownAfterTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@632ceb35]" started-at="2022-10-02T14:53:35 PDT" name="tearDownAfterTest" finished-at="2022-10-02T14:53:35 PDT" duration-ms="432" status="PASS">
+        <test-method is-config="true" signature="tearDownAfterTest()[pri:0, instance:com.firebase.test.tests.AutomationTest@1800a575]" started-at="2022-10-02T18:25:13 PDT" name="tearDownAfterTest" finished-at="2022-10-02T18:25:14 PDT" duration-ms="365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAfterTest -->

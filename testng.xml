@@ -9,7 +9,7 @@
       <class name="com.firebase.test.tests.AutomationTest">
       
      <methods>
-        <include name="verifyTC34()"></include>
+        <include name="tabCustomizationTC35()"></include>
        
       </methods>
       

@@ -28,8 +28,6 @@ public class AutomationTest extends BaseClass{
 	
 		// TODO Auto-generated method stub
         
-	
-	
 
    @Test
        public static void loginErrorMessage()throws InterruptedException, IOException   {
@@ -652,13 +650,41 @@ public static void tabCustomizationTC35() throws InterruptedException {
     save.click();
     driver.navigate().refresh();
     
-    
-}
+	}
+	@Test
+	public static void blockEventTC36() throws Exception{
+		CommonUtilities CU = new CommonUtilities();
+		Properties applicationPropertiesFile = CU.loadfile("applicationProperties");
+		loginToSalesforceMethod();
+	    WebElement home = driver.findElement(By.xpath("//*[@id=\"home_Tab\"]/a"));
+	    home.click();
+	    Thread.sleep(2500);
+	    clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
+	    WebElement currentDate = driver.findElement(By.xpath("//*[@id=\"ptBody\"]/div/div[2]/span[2]/a"));
+	    currentDate.click();
+	    Thread.sleep(1500);
+	    WebElement eightPM = driver.findElement(By.xpath("//*[@id=\"p:f:j_id25:j_id61:28:j_id64\"]/a"));
+	    eightPM.click();
+	    WebElement subjectCombo = driver.findElement(By.xpath("//*[@id=\"ep\"]/div[2]/div[4]/table/tbody/tr[2]/td[2]/div/a"));
+	    subjectCombo.click();
+	    String oWH = driver.getWindowHandle();
+	    Set<String> wH = driver.getWindowHandles();
+	    for(String handle: wH) {
+	    	if(!oWH.equals(handle)) {
+	    	    driver.switchTo().window(handle);
 
-
-
-
-
+	    	}
+	    }
+	    WebElement other = driver.findElement(By.xpath("/html/body/div[2]/ul/li[5]/a"));
+	    other.click();
+	    driver.switchTo().window(oWH);
+	    WebElement endTime = driver.findElement(By.name("EndDateTime_time"));
+	    endTime.clear();
+	    endTime.sendKeys(applicationPropertiesFile.getProperty("endTime"));
+	    Thread.sleep(1200);
+	    WebElement save = driver.findElement(By.name("save"));
+	    save.click();
+	}
 }
 
 

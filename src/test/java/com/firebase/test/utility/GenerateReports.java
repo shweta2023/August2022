@@ -1,5 +1,6 @@
 package com.firebase.test.utility;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -43,7 +44,12 @@ public class GenerateReports {
 		public void logTestInfo(String message) {
 			logger.log(Status.INFO,message);
 		}
-		
+		public void logPass(String message) {
+			logger.log(Status.PASS,message);
+		}
+		public void logFail(String message) {
+			logger.log(Status.FAIL,message);
+		}
 		public void logTestPassed(String testcasename) {
 			logger.log(Status.PASS, MarkupHelper.createLabel("testcasename" + "is passTest",ExtentColor.GREEN));
 		}
@@ -64,7 +70,9 @@ public class GenerateReports {
 		
 			extent.flush();
 		}
-			
+		public void addScreenshot(String file, String title) throws IOException {
+			logger.addScreenCaptureFromPath(file, title);
+		}
 
 			
 		

@@ -1015,16 +1015,6 @@ public static void tabCustomizationTC35() throws InterruptedException {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 

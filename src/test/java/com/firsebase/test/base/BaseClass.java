@@ -1,6 +1,7 @@
 package com.firsebase.test.base;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -64,23 +65,21 @@ public class BaseClass  {
 		}
 		
 		@AfterMethod
-		public static void tearDown(ITestResult result) {
+		public static void tearDown() {
 			Logger.info("After method execution has started");
+			String path = fullScreenshot();
+			try {
+				report.addScreenshot(path,"Full page screenshot");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			closeBrowser();
-			  if(result.getStatus() == ITestResult.FAILURE) {
-				  report.logTestfailed(null);
-		        }
-		        else if(result.getStatus() == ITestResult.SUCCESS) {
-					  report.logTestPassed(null);
-		        }
-		        else {
-					  report.logTestSkipped(null);
-		        }
-			  System.out.println("kk");
+	
 		}
 	@AfterTest
-	public static void tearDownAfterTest(ITestResult result) {
-		
+	public static void tearDownAfterTest() {
+
 			report.endReport();
 
 	}
@@ -104,20 +103,20 @@ public class BaseClass  {
 public static void clearElement(WebElement element, String objname) {
 	if(element.isDisplayed()) {
 		element.clear();
-		report.logTestInfo("pass:" + objname +"element cleared");
+		report.logPass("pass:" + objname +"element cleared");
 	}
 	else {
-		report.logTestInfo("fail:" + objname + "element not displayed");
+		report.logFail("fail:" + objname + "element not displayed");
 	}
 }
 	public static void enterText(WebElement element,String text,String objname) {
 		if(element.isDisplayed()) {
 			clearElement(element,objname);
 			element.sendKeys(text);
-			report.logTestInfo("text entered in" + objname + "field");;
+			report.logPass("text entered in" + objname + "field");;
 		}
 		else {
-			report.logTestInfo("Fail" + objname +"element is not displayed ");
+			report.logFail("Fail" + objname +"element is not displayed ");
 		
 		}
 	}
@@ -125,10 +124,10 @@ public static void clearElement(WebElement element, String objname) {
 		if(element.isDisplayed()) {
 			
 			element.click();
-			report.logTestInfo("pass" + objname + "element is clicked");
+			report.logPass("pass" + objname + "element is clicked");
 		}
 		else {
-			report.logTestInfo("Fail" + objname +"element is not displayed ");
+			report.logFail("Fail" + objname +"element is not displayed ");
 
 		}
 	}
@@ -198,7 +197,7 @@ public static void clearElement(WebElement element, String objname) {
 	public static void waitUntilPageLoads() {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 	}
-	public static void fullScreenshot() {
+	public static String fullScreenshot() {
 		 WebElement screenshotElement = driver.findElement(By.tagName("body"));
 		  File screenshotBase = screenshotElement.getScreenshotAs(OutputType.FILE);
 	      Date date = new Date();
@@ -207,10 +206,15 @@ public static void clearElement(WebElement element, String objname) {
 		  FileUtils.copyFile(screenshotBase,screenshot);
 		  }catch(Exception e) {
 			  e.printStackTrace();
+			  report.logFail("Screenshot error");
+
 		  }
-		  
-		  report.logTestInfo("Screenshot done");
+
+		  report.logPass("Screenshot done");
+		  return screenshot.getAbsolutePath();
+
 	}
+
 	public static void screenshot(WebElement element) {
 		  File screenshotBase = element.getScreenshotAs(OutputType.FILE);
 	      Date date = new Date();
@@ -219,9 +223,11 @@ public static void clearElement(WebElement element, String objname) {
 		  FileUtils.copyFile(screenshotBase,screenshot);
 		  }catch(Exception e) {
 			  e.printStackTrace();
+			  report.logFail("Screenshot error");
+
 		  }
 		  
-		  report.logTestInfo("Screenshot done");
+		  report.logPass("Screenshot done");
 	}
 	public static void validateDropdown(WebElement element,String ... props) {
 		CommonUtilities cu = new CommonUtilities();
@@ -243,7 +249,7 @@ public static void clearElement(WebElement element, String objname) {
 		      }
 		    }
 		 Assert.assertTrue(match);
-		report.logTestInfo("Passed Validation");
+		report.logPass("Passed Validation");
 	
 		 }
 	public static void Report() {
@@ -275,4 +281,12 @@ public static void clearElement(WebElement element, String objname) {
             }
 	     }	
      }
+    public static void refreshPage() {
+		driver.navigate().refresh();
+		System.out.println("current page is refreshed");
+    
+    
+    
+    
+    }
  }

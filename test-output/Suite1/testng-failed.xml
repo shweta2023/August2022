@@ -11,9 +11,9 @@
         <methods>
           <include name="tearDownAfterTest"/>
           <include name="tearDown"/>
-          <include name="hjibfuigref"/>
           <include name="setUp"/>
           <include name="setupBeforeTest"/>
+          <include name="salesforceTC33"/>
         </methods>
       </class> <!-- com.firebase.test.tests.AutomationTest -->
     </classes>

@@ -11,7 +11,11 @@
     <classes>
       <class name="com.firebase.test.tests.AutomationTest">
       
-   
+     <methods>
+        <include name="salesforceTC33()"></include>
+       
+      </methods>
+      
 	</class>
     </classes>
 

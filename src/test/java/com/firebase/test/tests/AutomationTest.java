@@ -1,6 +1,7 @@
 package com.firebase.test.tests;
 
 import java.io.File;
+import org.testng.Assert;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Iterator;
@@ -8,7 +9,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.core.util.Assert;
+//import org.apache.logging.log4j.core.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -875,19 +876,19 @@ public static void salesforceTC33() throws Exception{
 	System.out.println("i am here");
     clickElement(driver.findElement(By.id("tryLexDialogX")),"X");
     //Thread.sleep(5900);
-	WebElement name = driver.findElement(By.linkText("Shweta Mittal"));
+	WebElement name = driver.findElement(By.linkText("Shweta Abcd"));
 	verifyLinkAvailability(name);
 	clickElement(name,"name");
 	Thread.sleep(2900);
-	String strUrl = driver.getCurrentUrl();
+	String actual = driver.getCurrentUrl();
 	Thread.sleep(2900);
 	WebElement shwetamittal = driver.findElement(By.id("userNavLabel"));
 	clickElement(shwetamittal,"shwetamittal");
 	WebElement myprofile = driver.findElement(By.xpath("//*[@id=\"userNav-menuItems\"]/a[1]"));
 	clickElement(myprofile,"myprofile");
 	//waitUntilVisible(myprofile,"myprofile");
-	String strUr2 = driver.getCurrentUrl();
-	strUr2.contains(strUrl);
+	String expected = driver.getCurrentUrl();
+	Assert.assertEquals(actual, expected);
 }
 
 
@@ -1013,8 +1014,7 @@ public static void tabCustomizationTC35() throws InterruptedException {
 	    		monthly.click();
 	    }
 	
-	
-	
+
 }
 
 
